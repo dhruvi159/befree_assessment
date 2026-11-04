@@ -1,0 +1,301 @@
+﻿# StatementIQ Category Taxonomy & Classification Rules
+# This is the single source of truth for categories and rule-based classification.
+# Rules are applied in priority order (higher priority first).
+# User overrides from the Settings page are stored in SQLite and merged at runtime.
+
+categories:
+  - name: "Salary & Income"
+    keywords:
+      - salary
+      - payroll
+      - sal credit
+      - salary credit
+    regex_patterns:
+      - "(?i)\\bsal(ary)?\\s*(cr|credit)\\b"
+      - "(?i)\\bpayroll\\b"
+    priority: 100
+
+  - name: "Transfers"
+    keywords:
+      - fund transfer
+      - self transfer
+      - own account
+    regex_patterns:
+      - "(?i)\\b(self|own)\\s*(transfer|tfr)\\b"
+      - "(?i)\\bfund\\s*transfer\\b"
+    priority: 30
+
+  - name: "Food & Dining"
+    keywords:
+      - swiggy
+      - zomato
+      - restaurant
+      - cafe
+      - coffee
+      - dominos
+      - pizza
+      - mcdonalds
+      - kfc
+      - burger
+      - food
+      - dining
+      - eat
+      - barbeque
+      - biryani
+      - starbucks
+      - chaayos
+      - Blinkit
+      - Zepto
+      - VADILAL
+    regex_patterns:
+      - "(?i)\\b(swiggy|zomato|dominos|mcdonalds|kfc|starbucks|chaayos|barbeque)\\b"
+    priority: 80
+
+  - name: "Transportation"
+    keywords:
+      - uber
+      - ola
+      - rapido
+      - fuel
+      - petrol
+      - diesel
+      - metro
+      - irctc
+      - railway
+      - parking
+      - toll
+      - fastag
+    regex_patterns:
+      - "(?i)\\b(uber|ola|rapido|irctc|fastag)\\b"
+      - "(?i)\\b(fuel|petrol|diesel)\\b"
+    priority: 80
+
+  - name: "Shopping"
+    keywords:
+      - amazon
+      - flipkart
+      - myntra
+      - ajio
+      - nykaa
+      - meesho
+      - snapdeal
+      - croma
+      - reliance digital
+      - big bazaar
+    regex_patterns:
+      - "(?i)\\b(amazon|flipkart|myntra|ajio|nykaa|meesho|croma)\\b"
+    priority: 80
+
+  - name: "Entertainment"
+    keywords:
+      - netflix
+      - spotify
+      - hotstar
+      - prime video
+      - movie
+      - cinema
+      - pvr
+      - inox
+      - youtube premium
+      - gaming
+    regex_patterns:
+      - "(?i)\\b(netflix|spotify|hotstar|pvr|inox|youtube\\s*premium)\\b"
+    priority: 80
+
+  - name: "Utilities"
+    keywords:
+      - electricity
+      - water bill
+      - internet bill
+      - mobile recharge
+      - broadband
+      - gas bill
+      - airtel
+      - jio
+      - vodafone
+      - bsnl
+      - tata power
+      - bescom
+      - adani gas
+    regex_patterns:
+      - "(?i)\\b(electricity|water\\s*bill|internet\\s*bill|broadband|gas\\s*bill)\\b"
+      - "(?i)\\b(airtel|jio|vodafone|bsnl|tata\\s*power|bescom)\\b"
+      - "(?i)\\bmobile\\s*(recharge|rech)\\b"
+    priority: 75
+
+  - name: "Rent & Housing"
+    keywords:
+      - rent
+      - house rent
+      - flat rent
+      - landlord
+      - maintenance
+      - society charges
+    regex_patterns:
+      - "(?i)\\b(house\\s*)?rent\\b"
+      - "(?i)\\b(maintenance|society\\s*charges)\\b"
+    priority: 85
+
+  - name: "Healthcare"
+    keywords:
+      - hospital
+      - medical
+      - pharmacy
+      - doctor
+      - clinic
+      - apollo
+      - medplus
+      - netmeds
+      - pharmeasy
+      - diagnostic
+      - lab test
+    regex_patterns:
+      - "(?i)\\b(hospital|medical|pharmacy|clinic|apollo|medplus|netmeds|pharmeasy)\\b"
+    priority: 75
+
+  - name: "Education"
+    keywords:
+      - school
+      - college
+      - university
+      - tuition
+      - course
+      - udemy
+      - coursera
+      - unacademy
+      - byju
+    regex_patterns:
+      - "(?i)\\b(school|college|university|tuition|udemy|coursera|unacademy|byju)\\b"
+    priority: 75
+
+  - name: "Cash Withdrawal"
+    keywords:
+      - atm withdrawal
+      - atm wdl
+      - cash withdrawal
+      - atm cash
+    regex_patterns:
+      - "(?i)\\batm\\s*(wdl|withdrawal|cash)\\b"
+      - "(?i)\\bcash\\s*withdrawal\\b"
+    priority: 90
+
+  - name: "Cash Deposit"
+    keywords:
+      - cash deposit
+      - cash dep
+      - cdm deposit
+    regex_patterns:
+      - "(?i)\\bcash\\s*(deposit|dep)\\b"
+      - "(?i)\\bcdm\\s*deposit\\b"
+    priority: 90
+
+  - name: "Investments"
+    keywords:
+      - mutual fund
+      - sip
+      - zerodha
+      - groww
+      - upstox
+      - investment
+      - stock
+      - shares
+      - demat
+      - nps
+      - ppf
+    regex_patterns:
+      - "(?i)\\b(mutual\\s*fund|sip|zerodha|groww|upstox|demat|nps|ppf)\\b"
+    priority: 75
+
+  - name: "Banking Charges"
+    keywords:
+      - atm charges
+      - bank charges
+      - sms charges
+      - service charge
+      - maintenance charge
+      - annual fee
+      - debit card fee
+      - gst on charges
+      - minimum balance
+    regex_patterns:
+      - "(?i)\\b(atm|bank|sms|service|maintenance)\\s*charge"
+      - "(?i)\\b(annual|debit\\s*card)\\s*fee\\b"
+      - "(?i)\\bgst\\s*on\\s*(charges|fee)\\b"
+      - "(?i)\\bmin(imum)?\\s*bal(ance)?\\s*charge\\b"
+    priority: 85
+
+  - name: "Insurance"
+    keywords:
+      - insurance
+      - premium
+      - lic
+      - tata aig
+      - icici lombard
+      - max life
+      - hdfc life
+      - star health
+    regex_patterns:
+      - "(?i)\\binsurance\\b"
+      - "(?i)\\b(lic|tata\\s*aig|icici\\s*lombard|max\\s*life|hdfc\\s*life|star\\s*health)\\b"
+      - "(?i)\\bpremium\\s*(payment|pay|ded)\\b"
+    priority: 80
+
+  - name: "Taxes"
+    keywords:
+      - income tax
+      - gst payment
+      - tds
+      - advance tax
+      - tax payment
+    regex_patterns:
+      - "(?i)\\b(income\\s*tax|advance\\s*tax|tax\\s*payment)\\b"
+      - "(?i)\\bgst\\s*payment\\b"
+      - "(?i)\\btds\\b"
+    priority: 85
+
+  - name: "Interest"
+    keywords:
+      - interest credit
+      - interest paid
+      - int credit
+      - interest earned
+    regex_patterns:
+      - "(?i)\\bint(erest)?\\s*(cr|credit|paid|earned)\\b"
+    priority: 85
+
+  - name: "Refunds & Reversals"
+    keywords:
+      - refund
+      - reversal
+      - cashback
+      - chargeback
+    regex_patterns:
+      - "(?i)\\b(refund|reversal|cashback|chargeback)\\b"
+    priority: 85
+
+  - name: "Friends & Family"
+    keywords:
+      - sent to friend
+      - sent to family
+      - personal transfer
+      - lent to
+      - borrowed from
+      - returned by
+      - return from
+    regex_patterns:
+      # UPI P2P: name followed by phone number in VPA  e.g. UPI/RAHUL-9876543210/...
+      - "(?i)upi[/\\s-]+[a-z][a-z\\s\\.]{1,30}[-/]\\d{10}"
+      # UPI P2P with name@bank handle  e.g. UPI//MEGHANA/PAR/HDFC/...
+      - "(?i)upi[/\\\\]{1,2}[a-z][a-z\\s\\.]{2,25}[/\\\\](par|hdfcbank|okaxis|oksbi|okicici|ybl|axl|ibl|upi|paytm|gpay|phonepe)"
+      # PhonePe / GPay / Paytm peer transfer patterns
+      - "(?i)(phonepe|gpay|google\\s*pay|paytm)[/\\s]+[a-z][a-z\\s\\.]{2,30}"
+      # Transfer to a person via UPI with common P2P words
+      - "(?i)\\b(send|sent|lend|lent|borrow|return|reimburse|split|gave|given)\\b.{0,30}\\b(upi|neft|imps)\\b"
+      # Generic: UPI transfer where counterparty looks like a human name (2 words, not a known merchant)
+      - "(?i)upi[/\\\\]{1,2}[a-z][a-z]+[\\s\\-\\.][a-z][a-z]+"
+    priority: 35
+  - name: "Uncategorized"
+    keywords: []
+    regex_patterns: []
+    priority: 0
+

@@ -1,0 +1,70 @@
+{
+  "version": "v1.0.0-real-statements",
+  "filename": "model_v1.0.0-real-statements.joblib",
+  "training_samples": 8,
+  "test_samples": 3,
+  "accuracy": 0.3333333333333333,
+  "precision_macro": 0.1111111111111111,
+  "recall_macro": 0.3333333333333333,
+  "f1_macro": 0.16666666666666666,
+  "confusion_matrix": {
+    "labels": [
+      "Food & Dining",
+      "Salary & Income",
+      "Transportation"
+    ],
+    "matrix": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ]
+  },
+  "classification_report": {
+    "Food & Dining": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.5,
+      "support": 1.0
+    },
+    "Salary & Income": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Transportation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "accuracy": 0.3333333333333333,
+    "macro avg": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 3.0
+    },
+    "weighted avg": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 3.0
+    }
+  },
+  "is_synthetic": false,
+  "trained_at": "2026-11-04T21:29:24.055200",
+  "source": "real_uploaded_statements"
+}
