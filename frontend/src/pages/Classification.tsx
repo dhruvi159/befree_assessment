@@ -184,15 +184,44 @@ export function Classification({ setPage }: ClassificationPageProps) {
               <Button
                 variant="secondary"
                 onClick={handleRetrain}
-                disabled={retraining}
+                disabled={retraining || coverageData.total === 0}
                 icon={<RefreshCw size={13} className={retraining ? 'spin' : ''} />}
-                style={{ fontSize: 11, height: 28, padding: '0 8px' }}
-                title="Retrain Logistic Regression on current statement transactions"
+                style={{
+                  fontSize: 11,
+                  height: 28,
+                  padding: '0 8px',
+                  cursor: coverageData.total === 0 ? 'not-allowed' : 'pointer',
+                  opacity: coverageData.total === 0 ? 0.6 : 1,
+                }}
+                title={
+                  coverageData.total === 0
+                    ? 'Upload a bank statement first to re-evaluate or train the model on new data'
+                    : 'Retrain Logistic Regression on current statement transactions'
+                }
               >
-                {retraining ? 'Evaluating...' : 'Evaluate Model'}
+                {retraining ? 'Evaluating...' : 'Re-evaluate Model'}
               </Button>
             </div>
           </div>
+
+          {coverageData.total === 0 && !retrainFeedback && (
+            <div
+              style={{
+                padding: '7px 12px',
+                borderRadius: 8,
+                background: 'var(--soft)',
+                color: 'var(--muted)',
+                border: '1px solid var(--line)',
+                fontSize: 11,
+                marginBottom: 14,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+              }}
+            >
+              <span>ℹ️ Active model is pre-trained & ready. Upload a statement to re-evaluate on new data.</span>
+            </div>
+          )}
 
           {retrainFeedback && (
             <div
