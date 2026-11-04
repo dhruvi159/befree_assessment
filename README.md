@@ -199,36 +199,17 @@ FastAPI automatically mounts `/assets` and serves the compiled React single-page
 
 ## 8. Automated Testing
 
-All 23 backend unit and integration tests are verified and passing:
+StatementIQ maintains automated test coverage across all pipeline stages, bank adapters, and API endpoints:
 
 ```powershell
-python -m pytest -v
+python -m pytest
 ```
 
-```text
-============================= test session starts =============================
-backend/tests/test_api.py::test_health_endpoint PASSED                   [  4%]
-backend/tests/test_api.py::test_dashboard_empty_or_data PASSED           [  8%]
-backend/tests/test_api.py::test_rules_crud PASSED                        [ 13%]
-backend/tests/test_api.py::test_model_metrics PASSED                     [ 17%]
-backend/tests/test_api.py::test_purge_endpoint PASSED                    [ 21%]
-backend/tests/test_classifier.py::test_normalize_narration PASSED        [ 26%]
-backend/tests/test_classifier.py::test_extract_merchant PASSED           [ 30%]
-backend/tests/test_classifier.py::test_rule_based_food PASSED            [ 34%]
-backend/tests/test_classifier.py::test_rule_based_transport PASSED       [ 39%]
-backend/tests/test_classifier.py::test_rule_based_salary PASSED          [ 43%]
-backend/tests/test_classifier.py::test_ml_prediction PASSED              [ 47%]
-backend/tests/test_classifier.py::test_combined_decision_flow PASSED     [ 52%]
-backend/tests/test_detector.py::test_detect_text_based PASSED            [ 56%]
-backend/tests/test_detector.py::test_detect_scanned PASSED               [ 60%]
-backend/tests/test_detector.py::test_detect_missing_file PASSED          [ 65%]
-backend/tests/test_export.py::test_excel_export PASSED                   [ 69%]
-backend/tests/test_export.py::test_csv_export PASSED                     [ 73%]
-backend/tests/test_extractor.py::test_adapter_detection PASSED           [ 78%]
-backend/tests/test_extractor.py::test_extract_hdfc_text PASSED           [ 82%]
-backend/tests/test_ocr.py::test_ocr_extraction_speed_and_accuracy PASSED [ 86%]
-backend/tests/test_validator.py::test_balance_reconciliation_exact PASSED [ 91%]
-backend/tests/test_validator.py::test_balance_reconciliation_discrepancy PASSED [ 95%]
-backend/tests/test_validator.py::test_data_validator_flags PASSED        [100%]
-======================= 23 passed in 5.08s =======================
-```
+### Test Suite Coverage
+- **PDF Page Detection**: Digital vector layer vs. scanned raster image classification.
+- **Bank Adapter Extraction**: Table parsing, multi-line narration reassembly, and dual date handling across bank formats.
+- **Computer Vision & OCR**: High-speed Otsu thresholding, PyMuPDF pixmap rendering, and spatial centroid line clustering.
+- **Classification Engine**: Deterministic keyword/regex matching and Scikit-Learn TF-IDF Logistic Regression inference.
+- **Financial Validation**: Mathematical running balance reconciliation ($\text{Balance}_{t-1} - \text{Debit} + \text{Credit} = \text{Balance}_t$).
+- **Export Verification**: Binary byte integrity checks for multi-sheet openpyxl Excel workbooks and clean Pandas CSV exports.
+- **REST Endpoints & Privacy**: FastAPI route contracts, session auto-purge, and data unlinking.
